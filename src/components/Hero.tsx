@@ -7,9 +7,9 @@ interface HeroProps {
 
 export function Hero({ onGetStarted }: HeroProps) {
   return (
-    <div className="relative bg-[#020817]">
+    <div className="" id='hero'>
       <div className="absolute inset-0 grid-background opacity-20"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/50 to-transparent"></div>
       <div className="relative max-w-7xl mx-auto px-4 py-32">
         <div className="text-center">
           <div className="flex justify-center mb-6">

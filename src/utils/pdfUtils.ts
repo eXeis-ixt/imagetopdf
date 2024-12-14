@@ -8,22 +8,18 @@ export async function convertImagesToPdf(images: File[]): Promise<Blob> {
     const imageUrl = URL.createObjectURL(image);
     
     try {
-      // Load image and get dimensions
       const img = await loadImage(imageUrl);
       const imgProps = pdf.getImageProperties(img);
       
-      // Calculate dimensions to fit page
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
       const imgWidth = imgProps.width;
       const imgHeight = imgProps.height;
       
-      // Calculate scaling to fit page while maintaining aspect ratio
       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
       const width = imgWidth * ratio;
       const height = imgHeight * ratio;
       
-      // Center image on page
       const x = (pdfWidth - width) / 2;
       const y = (pdfHeight - height) / 2;
 

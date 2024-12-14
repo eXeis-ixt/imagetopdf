@@ -1,4 +1,6 @@
-import { FileImage } from 'lucide-react';
+// import {PlaneIcon } from 'lucide-react';
+import {PlaneIcon } from 'lucide-react';
+
 import { Button } from './Button';
 
 export function Navbar() {
@@ -8,9 +10,11 @@ export function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 py-4 bg-gray-900/50 backdrop-blur-lg border border-gray-800 rounded-2xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <FileImage className="w-8 h-8 text-blue-400" />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+              <PlaneIcon className="w-8 h-8 text-white" />
+              <span className="text-xl font-semibold text-white">
+              <a href="/">
                 Midline PDF
+              </a>
               </span>
             </div>
             
@@ -18,10 +22,10 @@ export function Navbar() {
               <a href="#features" className="text-gray-300 hover:text-white transition-colors">
                 Features
               </a>
-              <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">
-                How it Works
+              <a href="#pdf" className="text-gray-300 hover:text-white transition-colors">
+                Make PDF
               </a>
-              <Button variant="secondary">
+              <Button variant="primary" >
                 Get Started
               </Button>
             </div>

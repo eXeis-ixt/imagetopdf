@@ -1,3 +1,3 @@
 # imagetopdf
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/eXeis-ixt/imagetopdf)
+[Created by Fahad Bhuiyan⚡️](https://github.com/eXeis-ixt/imagetopdf)

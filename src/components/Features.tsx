@@ -1,4 +1,6 @@
 import { FileImage, FileOutput, Shield } from 'lucide-react';
+import { FeatureCard } from './FeatureCard';
+
 
 const features = [
   {
@@ -20,16 +22,19 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gradient-to-t from-indigo-900/50 to-transparent">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">Why Choose Our Converter?</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">
+          Why Choose Our Converter?
+        </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="p-6 bg-gray-800 rounded-xl border border-gray-700">
-              <feature.icon className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
-              <p className="text-gray-300">{feature.description}</p>
-            </div>
+            <FeatureCard
+              key={feature.title}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
           ))}
         </div>
       </div>
