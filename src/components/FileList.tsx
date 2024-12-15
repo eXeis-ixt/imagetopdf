@@ -1,5 +1,6 @@
 interface FileListProps {
   files: File[];
+  onRemoveFile: (index: number) => void; // Add this line
 }
 
 export function FileList({ files }: FileListProps) {

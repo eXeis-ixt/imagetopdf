@@ -13,7 +13,7 @@ export function Navbar() {
               <PlaneIcon className="w-8 h-8 text-white" />
               <span className="text-xl font-semibold text-white">
               <a href="/">
-                Midline PDF
+                Adons Tech | PDF
               </a>
               </span>
             </div>

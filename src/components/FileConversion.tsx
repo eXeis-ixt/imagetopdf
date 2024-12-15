@@ -7,7 +7,7 @@ import { convertImagesToPdf } from '../utils/pdfUtils';
 export const FileConversion = forwardRef<HTMLDivElement>((_, ref) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [converting, setConverting] = useState(false);
-  const [fileName, setFileName] = useState(''); // default file name
+  const [fileName, setFileName] = useState('converted-images.pdf'); // default file name
 
   const handleFilesDrop = (files: File[]) => {
     setSelectedFiles(files);
@@ -16,6 +16,12 @@ export const FileConversion = forwardRef<HTMLDivElement>((_, ref) => {
   const handleFileNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFileName(event.target.value);
   };
+
+  const handleRemoveFile = (index: number) => {
+    setSelectedFiles(selectedFiles.filter((_, i) => i !== index));
+  };
+
+  
 
   const handleConvert = async () => {
     if (selectedFiles.length === 0) return;
@@ -45,7 +51,7 @@ export const FileConversion = forwardRef<HTMLDivElement>((_, ref) => {
       
       {selectedFiles.length > 0 && (
         <div className="mt-6">
-          <FileList files={selectedFiles} />
+          <FileList files={selectedFiles} onRemoveFile={handleRemoveFile} />
           <input
             type="text"
             value={fileName}
